@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	div(class='jumbotron')
+		div(class='container')
+			h1= title
+			p Welcome to #{title}
+	div(class='container' ng-controller='InsiktenCtrl')
+		input#search(type='search', placeholder='Search')
+		h2#results
