@@ -6,5 +6,20 @@ block content
 			h1= title
 			p Welcome to #{title}
 	div(class='container' ng-controller='InsiktenCtrl')
-		input#search(type='search', placeholder='Search')
+		form
+			input#search(ng-model='pageId', placeholder='Search', ng-change='handleIdChange()')
+			input#randomBtn(type='button', value='Random', ng-click='randomPage()')
+			input#allBtn(type='button', value='All', ng-click='getAllData()')
 		h2#results
+			| Resultat
+		ul.unstyled
+			li(ng-repeat="item in items")
+				span
+					| {{item.Name}} - {{item.Value}}
+		ul.unstyled
+			li(ng-repeat="item in pageNames track by $index")
+				span
+					| [{{item.id}}] : {{item.pageName}}
+
+block additionalScripts
+	script(src='/javascripts/controllers/PagePropertiesController.js');

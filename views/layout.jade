@@ -1,5 +1,5 @@
 doctype 5
-html(ng-app)
+html(ng-app='InsiktenView')
 	head
 		title= title
 		link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.css')
@@ -11,3 +11,4 @@ html(ng-app)
 		script(src='/angular/angular.js', type='text/javascript')
 		script(src='/angular-bootstrap/ui-bootstrap.min.js', type='text/javascript')
 		script(src='/javascripts/Main.js')
+	block additionalScripts
